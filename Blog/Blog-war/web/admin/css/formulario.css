@@ -1,0 +1,10 @@
+.row{padding: 1em;  
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: center;
+}
+
+h3{text-align: center;}
+
+input[type="text"]{width: 70%;}
+input[type="password"]{width: 70%;}
