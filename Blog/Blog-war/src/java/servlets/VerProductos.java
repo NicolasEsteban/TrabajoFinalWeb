@@ -66,7 +66,106 @@ public class VerProductos extends HttpServlet {
 "      <script type=\"text/javascript\" src=\"admin/js/sb-admin-2.js\"></script>");            
             out.println("</head>");  
             out.println("<body>");
+                       out.println("  <div id=\"wrapper\">\n" +
+"\n" +
+"        \n" +
+"        <nav class=\"navbar navbar-default navbar-static-top\" role=\"navigation\" style=\"margin-bottom: 0\">\n" +
+"            <div class=\"navbar-header\">\n" +
+"                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n" +
+"                    <span class=\"sr-only\">Toggle navigation</span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                </button>\n" +
+"            \n" +
+"                <a class=\"navbar-brand\" href=\"index.html\">Admin</a>\n" +
+"\n" +
+"            </div>\n" +
+"           \n" +
+"    \n" +
+" <ul class=\"nav navbar-top-links navbar-right\">\n" +
+"                 <li class=\"dropdown\">\n" +
+"                    <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">\n" +
+"                        <i class=\"fa fa-user fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>\n" +
+"                    </a>\n" +
+"                    <ul class=\"dropdown-menu dropdown-user\">\n" +
+"                        <li><a href=\"#\"><i></i></a>\n" +
+"                        </li>\n" +
+"                        <li class=\"divider\"></li>\n" +
+"                        <li><a href=\"\"><i class=\"fa fa-sign-out fa-fw\"></i>Cerrar Sección</a>\n" +
+"                        </li>\n" +
+"                    </ul>\n" +
+"                </li>\n" +
+"            </ul>\n" +
+"\n" +
+"            <div class=\"navbar-default sidebar\" role=\"navigation\">\n" +
+"                <div class=\"sidebar-nav navbar-collapse\">\n" +
+"                    <ul class=\"nav\" id=\"side-menu\">\n" +
+"\n" +
+"                    \n" +
+"                    <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i> Producto<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                     \n" +
+"                                <li>\n" +
+"                                \n" +
+"                                    <a href=\"plantillaCrear\"><i class='fa fa-plus fa-fw'></i>Agregar </a>\n" +
+"                                </li>\n" +
+"\n" +
+"                                <li>\n" +
+"                                    <a href=\"VerProductos\"><i class='fa fa-list-ol fa-fw'></i> Ver </a>\n" +
+"                                </li>\n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"\n" +
+"    <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i>Bodegas<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                         \n" +
+"                                <li>\n" +
+"                                    <a href=\"plantillaCrearBodega\"> <i class='fa fa-plus fa-fw'></i> Agregar </a>\n" +
+"                                </li>\n" +
+"                                <li>\n" +
+"                                \n" +
+"                                    <a href=\"/proyecto\"><i class='fa fa-list-ol fa-fw'></i>Ver</a>\n" +
+"                                </li>\n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"                        \n" +
+"                      \n" +
+"                        \n" +
+"                        <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i> Movimientos<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                          \n" +
+"                                <li>\n" +
+"                                    <a href=\"crearMov\"> <i class='fa fa-plus fa-fw'></i> Agregar </a>\n" +
+"                                </li>\n" +
+"                                <li>\n" +
+"                                    <a href=\"verMov\"> <i class='fa fa-plus fa-fw'></i> Ver </a>\n" +
+"                                </li>\n" +
+"                                \n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"                        \n" +
+"                        \n" +
+"\n" +
+"                   \n" +
+"           \n" +
+"\n" +
+"                          \n" +
+"                    </ul>\n" +
+"                </div>\n" +
+"            </div>\n" +
+"\n" +
+"\n" +
+"     </nav>\n" +
+"\n" +
+"  <div id=\"page-wrapper\">\n");
+
             
+            
+            out.println("<legend><h3>Lista de Productos</h3></legend>");
              out.println("<div class=\"row\">");
              out.println("<div class = \"col-xs-12\">");
              out.println("<div class=\"table-responsive\">");
@@ -110,6 +209,8 @@ public class VerProductos extends HttpServlet {
               
               out.println("</div >");
               out.println("</div>");
+              out.println("</div>");
+              
               out.println("</div>");
             out.println("</body>");
             out.println("</html>");

@@ -64,10 +64,105 @@ public class crearMov extends HttpServlet {
              
             out.println("</head>");
             out.println("<body>");
-            out.println("<div class=\"row\">");
-             out.println("<div class = \"col-lg-8 col-md-8 col-sm-8 col-xs-12\">");
-             out.println("<h1>Crear Movimiento</h1>");
-            out.println("<h3>Lista de Productos</h3>");
+            
+            out.println("  <div id=\"wrapper\">\n" +
+"\n" +
+"        \n" +
+"        <nav class=\"navbar navbar-default navbar-static-top\" role=\"navigation\" style=\"margin-bottom: 0\">\n" +
+"            <div class=\"navbar-header\">\n" +
+"                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n" +
+"                    <span class=\"sr-only\">Toggle navigation</span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                    <span class=\"icon-bar\"></span>\n" +
+"                </button>\n" +
+"            \n" +
+"                <a class=\"navbar-brand\" href=\"index.html\">Admin</a>\n" +
+"\n" +
+"            </div>\n" +
+"           \n" +
+"    \n" +
+" <ul class=\"nav navbar-top-links navbar-right\">\n" +
+"                 <li class=\"dropdown\">\n" +
+"                    <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">\n" +
+"                        <i class=\"fa fa-user fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>\n" +
+"                    </a>\n" +
+"                    <ul class=\"dropdown-menu dropdown-user\">\n" +
+"                        <li><a href=\"#\"><i></i></a>\n" +
+"                        </li>\n" +
+"                        <li class=\"divider\"></li>\n" +
+"                        <li><a href=\"\"><i class=\"fa fa-sign-out fa-fw\"></i>Cerrar Sección</a>\n" +
+"                        </li>\n" +
+"                    </ul>\n" +
+"                </li>\n" +
+"            </ul>\n" +
+"\n" +
+"            <div class=\"navbar-default sidebar\" role=\"navigation\">\n" +
+"                <div class=\"sidebar-nav navbar-collapse\">\n" +
+"                    <ul class=\"nav\" id=\"side-menu\">\n" +
+"\n" +
+"                    \n" +
+"                    <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i> Producto<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                     \n" +
+"                                <li>\n" +
+"                                \n" +
+"                                    <a href=\"plantillaCrear\"><i class='fa fa-plus fa-fw'></i>Agregar </a>\n" +
+"                                </li>\n" +
+"\n" +
+"                                <li>\n" +
+"                                    <a href=\"VerProductos\"><i class='fa fa-list-ol fa-fw'></i> Ver </a>\n" +
+"                                </li>\n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"\n" +
+"    <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i>Bodegas<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                         \n" +
+"                                <li>\n" +
+"                                    <a href=\"plantillaCrearBodega\"> <i class='fa fa-plus fa-fw'></i> Agregar </a>\n" +
+"                                </li>\n" +
+"                                <li>\n" +
+"                                \n" +
+"                                    <a href=\"/proyecto\"><i class='fa fa-list-ol fa-fw'></i>Ver</a>\n" +
+"                                </li>\n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"                        \n" +
+"                      \n" +
+"                        \n" +
+"                        <li>\n" +
+"                            <a href=\"#\"><i class=\"fa fa-film fa-fw\"></i> Movimientos<span class=\"fa arrow\"></span></a>\n" +
+"                            <ul class=\"nav nav-second-level\">\n" +
+"                          \n" +
+"                                <li>\n" +
+"                                    <a href=\"crearMov\"> <i class='fa fa-plus fa-fw'></i> Agregar </a>\n" +
+"                                </li>\n" +
+"                                <li>\n" +
+"                                    <a href=\"verMov\"> <i class='fa fa-plus fa-fw'></i> Ver </a>\n" +
+"                                </li>\n" +
+"                                \n" +
+"                            </ul>\n" +
+"                        </li>\n" +
+"                        \n" +
+"                        \n" +
+"\n" +
+"                   \n" +
+"           \n" +
+"\n" +
+"                          \n" +
+"                    </ul>\n" +
+"                </div>\n" +
+"            </div>\n" +
+"\n" +
+"\n" +
+"     </nav>\n" +
+"\n" +
+"  <div id=\"page-wrapper\">\n");
+             out.println("<legend><h3>Crear Movimientos</h3></legend>");
+            out.println("<h4>Lista de Productos</h4>");
             
             out.println("<form action=\"ingresarMov\" method=\"post\">");
             
@@ -85,8 +180,10 @@ public class crearMov extends HttpServlet {
             
             
           pr =bodegaFacade.findAll();
+          
+          out.println("<div class=\"form-group\">");
           out.println("<p>");
-           out.println("<h3>Lista de Bodegas</h3>");
+           out.println("<h4>Lista de Bodegas</h4>");
            out.println("<label>Bodega Origen: </label>");
            
              out.println("<div class=\"form-group\">");
@@ -101,11 +198,12 @@ public class crearMov extends HttpServlet {
             out.println("</div>");
            out.println("</p>");
            
-             out.println("<p>");
+         
           
            out.println("<label>Bodega Destino: </label>");
             
             out.println("<div class=\"form-group\">");
+                out.println("<p>");
            out.println("<select name=\"id_bd\" id=\"id_bd\">");
               out.println("<option>---</option>");
            for(Bodega b : pr) {
@@ -113,18 +211,18 @@ public class crearMov extends HttpServlet {
                
             }
            out.println("</select>");
-            out.println("</div>");
            out.println("</p>");
+            out.println("</div>");
            
-       
+         out.println("<div class=\"form-group\">");
               out.println("<p>");
               
-            out.println("<h3>Cantidad</h3>");
+            out.println("<h4>Cantidad</h4>");
             out.println("<input type=\"text\" name=\"cantidad\">");
           out.println("</p>");
           
           out.println("<p>");
-           out.println("<h3>Tipo de Movimiento</h3>");
+           out.println("<h4>Tipo de Movimiento</h4>");
             
            out.println("<select name=\"tipo_m\" id=\"tipo_m\">");
             
@@ -140,17 +238,17 @@ public class crearMov extends HttpServlet {
            out.println(" <button class=\"btn btn-primary\" type=\"submit\">Guardar</button>");
            out.println("</p>");
            
+           out.println("</div>");
            out.println("</form>");
            
           
            
-            out.println("<div>");
-           out.println("<a href=\"index.html\"> <i class='fa fa-plus fa-fw'></i> Volver </a>");
-             out.println("</div>");
-             out.println("</div>");
-             out.println("</div>");
-             out.println("</body>");
-            out.println("</html>");
+        
+
+  out.println("</div>");
+ out.println("</body>");
+ out.println("</html>");
+ 
            }  catch (Exception e) {
             System.out.println(e.getMessage());
         }
