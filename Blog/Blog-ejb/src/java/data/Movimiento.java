@@ -6,6 +6,7 @@
 package data;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,9 @@ public class Movimiento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Calendar fecha;
+    private int cantidad;
+    private String TipoMovimiento;
     @ManyToOne
     private Producto producto;
     @ManyToOne
