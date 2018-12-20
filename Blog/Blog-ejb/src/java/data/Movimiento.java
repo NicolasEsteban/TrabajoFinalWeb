@@ -28,6 +28,8 @@ public class Movimiento implements Serializable {
     private Calendar fecha;
     private int cantidad;
     private String TipoMovimiento;
+    private Long bodegaDestino;
+    private int TotalUnidades;
     @ManyToOne
     private Producto producto;
     @ManyToOne
@@ -45,8 +47,33 @@ public class Movimiento implements Serializable {
         return bodega;
     }
 
+    public Calendar getFecha() {
+        return fecha;
+    }
+
+
+    public void setFecha(Calendar fecha) {
+        this.fecha = fecha;
+    }
+
     public void setBodega(Bodega bodega) {
         this.bodega = bodega;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getTipoMovimiento() {
+        return TipoMovimiento;
+    }
+
+    public void setTipoMovimiento(String TipoMovimiento) {
+        this.TipoMovimiento = TipoMovimiento;
     }
     
     public Long getId() {
@@ -56,7 +83,24 @@ public class Movimiento implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+   public Long getBodegaDestino() {
+        return bodegaDestino;
+    }
 
+    public void setBodegaDestino(Long bodegaDestino) {
+        this.bodegaDestino = bodegaDestino;
+    }
+
+    public int getTotalUnidades() {
+        return TotalUnidades;
+    }
+
+    public void setTotalUnidades(int TotalUnidades) {
+        this.TotalUnidades = TotalUnidades;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

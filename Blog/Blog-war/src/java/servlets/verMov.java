@@ -5,35 +5,32 @@
  */
 package servlets;
 
+import data.Movimiento;
 import data.Producto;
+import datasessionbeans.Data_MovimientoFacadeLocal;
 import datasessionbeans.Data_ProductoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Rodrigo
- */
-public class VerProductos extends HttpServlet {
 
-    @EJB
-    public Data_ProductoFacadeLocal productoFacade;
-    public List<Producto> pr;
-      
+public class verMov extends HttpServlet {
+ @EJB
+  private Data_MovimientoFacadeLocal movimientoFacade;
+  public List<Movimiento> movimientos;
+  
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         pr = productoFacade.findAll();
-            
+        
+        movimientos = movimientoFacade.findAll();
+    
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -73,32 +70,25 @@ public class VerProductos extends HttpServlet {
            out.println("<table class=\"table table-striped table-bordered table-condensed table-hover\">");
            
            out.println("<thead>");
-           out.println("<th>ID</th>");
-           out.println("<th>Nombre</th>");
-           out.println("<th>Opciones</th>");
+           out.println("<th>Fecha</th>");
+           out.println("<th>Tipo Movimiento</th>");
+           out.println("<th>id</th>");
+           out.println("<th>Bodega Origen</th>");
+           out.println("<th>Bodega Destino</th>");
+           out.println("<th>Cantidad</th>");
+            out.println("<th>Total Unidades</th>");
            out.println("</thead>");
            
            
-             for(Producto p : pr) {
+             for(Movimiento m : movimientos) {
                   out.println("<tr>");
-                  
-                 out.println("<td>"+ p.getId() +"</td>");
-                out.println("<td>"+ p.getNombreProducto() +"</td>");
-                
-                 out.println("<td>");
-               out.println("<form action=\"eliminarProducto\" method=\"post\">");
-               out.println("<input type=\"hidden\" name=\"idP\" value=\""+p.getId()+"\"/>"); 
-                out.println("<button type =\"submit\" class=\"btn btn-danger\"><i class=\"fa fa-trash\" style=\"font-size:20px;color:white\"></i></button>");
-                out.println(" </form>");
-                
-                
-                out.println("<form action=\"editarProducto\" method=\"post\">");
-               out.println("<input type=\"hidden\" name=\"id_p\" value=\""+p.getId()+"\"/>"); 
-                out.println("<button class=\"btn btn-info\"><i class=\"material-icons\" style=\"font-size:18px\">border_color</i></button>");
-                out.println(" </form>");
-                
-                out.println("</td>");
-                
+                 out.println("<td>"+ m.getFecha().getTime() +"</td>");
+                out.println("<td>"+ m.getTipoMovimiento() +"</td>");
+                out.println("<td>"+ m.getId()+"</td>");
+                out.println("<td>"+ m.getBodega().getNombre()+"</td>");
+                out.println("<td>"+ m.getBodegaDestino()+"</td>");
+                out.println("<td>"+ m.getCantidad()+"</td>");
+                 out.println("<td>"+ m.getTotalUnidades()+"</td>");
                 out.println("</tr>");
             }
            
@@ -107,7 +97,6 @@ public class VerProductos extends HttpServlet {
            out.println("<p>");
             out.println("<a href=\"index.html\"> <i class='fa fa-plus fa-fw'></i> Volver </a>");
               out.println("</p>");
-              
               out.println("</div >");
               out.println("</div>");
               out.println("</div>");
@@ -115,8 +104,7 @@ public class VerProductos extends HttpServlet {
             out.println("</html>");
         }
     }
-    
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
