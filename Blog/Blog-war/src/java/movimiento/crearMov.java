@@ -42,10 +42,13 @@ public class crearMov extends HttpServlet {
              out.println("<h1>Crear Movimiento</h1>");
             out.println("<h3>Lista de Productos</h3>");
             
-            out.println("<form action=\"ingresarMovimiento\" method=\"post\">");
+            out.println("<form action=\"\" method=\"post\">");
             
            out.println(" <select name=\"id_p\" id=\"id_p\">");
+           
+          
            for(Producto p : productoFacade.findAll()) {
+               
                 out.println("<option>"+ p.getId() +"</option>");
                
             }
@@ -56,8 +59,9 @@ public class crearMov extends HttpServlet {
            out.println("<label>Bodega Origen: </label>");
             
            out.println("<select name=\"id_bo\" id=\"id_bo\">");
-            
+            out.println("<option>---</option>");
            for(Bodega b : pr) {
+              
                 out.println("<option>"+ b.getId()+"</option>");
                
             }
@@ -69,7 +73,7 @@ public class crearMov extends HttpServlet {
            out.println("<label>Bodega Destino: </label>");
             
            out.println("<select name=\"id_bd\" id=\"id_bd\">");
-            
+              out.println("<option>---</option>");
            for(Bodega b : pr) {
                 out.println("<option>"+ b.getId()+"</option>");
                
@@ -77,10 +81,7 @@ public class crearMov extends HttpServlet {
            out.println("</select>");
            out.println("</p>");
            
-           
-           
-           
-           
+       
               out.println("<p>");
               
             out.println("<h3>Cantidad</h3>");
@@ -100,11 +101,13 @@ public class crearMov extends HttpServlet {
            out.println("</select>");
            out.println("</p>");
            
-           out.println("</form>");
-           
-           out.println("<p>");
+            out.println("<p>");
            out.println(" <button class=\"btn btn-primary\" type=\"submit\">Guardar</button>");
            out.println("</p>");
+           
+           out.println("</form>");
+           
+          
            
             out.println("<div>");
            out.println("<a href=\"index.html\"> <i class='fa fa-plus fa-fw'></i> Volver </a>");

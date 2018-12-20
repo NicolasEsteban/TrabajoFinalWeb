@@ -40,10 +40,7 @@
         <servlet-name>crearMov</servlet-name>
         <servlet-class>movimiento.crearMov</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ingresarMovimiento</servlet-name>
-        <servlet-class>servlets.ingresarMovimiento</servlet-class>
-    </servlet>
+  
     <servlet-mapping>
         <servlet-name>ingresarProductos</servlet-name>
         <url-pattern>/ingresarProductos</url-pattern>
@@ -84,10 +81,7 @@
         <servlet-name>crearMov</servlet-name>
         <url-pattern>/crearMov</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ingresarMovimiento</servlet-name>
-        <url-pattern>/ingresarMovimiento</url-pattern>
-    </servlet-mapping>
+ 
     <session-config>
         <session-timeout>
             30
