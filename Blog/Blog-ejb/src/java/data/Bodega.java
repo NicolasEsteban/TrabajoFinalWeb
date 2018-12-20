@@ -65,4 +65,8 @@ public class Bodega implements Serializable {
         return "data.Bodega[ id=" + id + " ]";
     }
     
+    public void add(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

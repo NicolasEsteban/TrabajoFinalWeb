@@ -6,6 +6,8 @@
 package servlets;
 
 import data.Bodega;
+import data.Producto;
+import datasessionbeans.Data_ProductoFacadeLocal;
 import datasessionbeans.Data_BodegaFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,27 +17,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
+/**
+ *
+ * @author Rodrigo
+ */
 public class ingresarBodegas extends HttpServlet {
 
-    @EJB
-    private Data_BodegaFacadeLocal bodegaFacade;
-    private Bodega bodega;
+   @EJB
+    private Data_BodegaFacadeLocal productoFacade;
+    private Bodega producto;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-        String nombre = request.getParameter("nom").toUpperCase();
-        bodega = new Bodega();
-        bodega.setNombre(nombre);
+            throws ServletException, IOException {
         
+         String nombre = request.getParameter("nom").toUpperCase();
+     
         
+        producto = new Bodega();
+        producto.setNombre(nombre);
+ 
         try {
-        bodegaFacade.create(bodega); 
+            productoFacade.create(producto); 
         response.sendRedirect("index.html");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        
         
     }
 
