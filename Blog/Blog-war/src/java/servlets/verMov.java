@@ -64,10 +64,22 @@ public class verMov extends HttpServlet {
             out.println("</head>");  
             out.println("<body>");
             
-             out.println("<div class=\"row\">");
+             
+           
+           
+           
+             for(Movimiento m : movimientos) {
+                  out.println("<p>");
+               out.println(" <strong>Nombre:</strong>    "+m.getProducto().getNombreProducto());
+               out.println("</p>");
+               out.println("<p>");
+               out.println(" <strong>Id:</strong>     "+m.getProducto().getId());
+               out.println("</p>");
+               
+           out.println("<div class=\"row\">");
              out.println("<div class = \"col-xs-12\">");
              out.println("<div class=\"table-responsive\">");
-           out.println("<table class=\"table table-striped table-bordered table-condensed table-hover\">");
+                 out.println("<table class=\"table table-striped table-bordered table-condensed table-hover\">");
            
            out.println("<thead>");
            out.println("<th>Fecha</th>");
@@ -79,8 +91,6 @@ public class verMov extends HttpServlet {
             out.println("<th>Total Unidades</th>");
            out.println("</thead>");
            
-           
-             for(Movimiento m : movimientos) {
                   out.println("<tr>");
                  out.println("<td>"+ m.getFecha().getTime() +"</td>");
                 out.println("<td>"+ m.getTipoMovimiento() +"</td>");
@@ -90,16 +100,19 @@ public class verMov extends HttpServlet {
                 out.println("<td>"+ m.getCantidad()+"</td>");
                  out.println("<td>"+ m.getTotalUnidades()+"</td>");
                 out.println("</tr>");
+                
+                out.println("</table>");
+                 out.println("</div >");
+              out.println("</div>");
+              out.println("</div>");
             }
            
-           out.println("</table>");
+           
            
            out.println("<p>");
             out.println("<a href=\"index.html\"> <i class='fa fa-plus fa-fw'></i> Volver </a>");
               out.println("</p>");
-              out.println("</div >");
-              out.println("</div>");
-              out.println("</div>");
+             
             out.println("</body>");
             out.println("</html>");
         }
