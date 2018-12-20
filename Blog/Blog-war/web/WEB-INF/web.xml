@@ -9,6 +9,10 @@
         <servlet-class>producto.plantillaCrear</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>plantillaCrearBodega</servlet-name>
+        <servlet-class>bodega.plantillaCrearBodega</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>VerProductos</servlet-name>
         <servlet-class>servlets.VerProductos</servlet-class>
     </servlet>
@@ -28,6 +32,10 @@
         <servlet-name>updateProducto</servlet-name>
         <servlet-class>servlets.updateProducto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ingresarBodegas</servlet-name>
+        <servlet-class>servlets.ingresarBodegas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ingresarProductos</servlet-name>
         <url-pattern>/ingresarProductos</url-pattern>
@@ -35,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>plantillaCrear</servlet-name>
         <url-pattern>/plantillaCrear</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>plantillaCrearBodega</servlet-name>
+        <url-pattern>/plantillaCrearBodega</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>VerProductos</servlet-name>
@@ -55,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>updateProducto</servlet-name>
         <url-pattern>/updateProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ingresarBodegas</servlet-name>
+        <url-pattern>/ingresarBodegas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
