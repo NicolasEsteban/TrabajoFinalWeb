@@ -11,6 +11,8 @@ import datasessionbeans.Data_MovimientoFacadeLocal;
 import datasessionbeans.Data_ProductoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -23,7 +25,7 @@ public class verMov extends HttpServlet {
  @EJB
   private Data_MovimientoFacadeLocal movimientoFacade;
   public List<Movimiento> movimientos;
-  
+  public SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -183,8 +185,10 @@ public class verMov extends HttpServlet {
             out.println("<th>Total Unidades</th>");
            out.println("</thead>");
            
+           
                   out.println("<tr>");
-                 out.println("<td>"+ m.getFecha().getTime() +"</td>");
+                 //out.println("<td>"+ m.getFecha().getTime() +"</td>");
+                 out.println("<td>"+ simpleDateFormat.format(m.getFecha().getTime()).toUpperCase() +"</td>");
                 out.println("<td>"+ m.getTipoMovimiento() +"</td>");
                 out.println("<td>"+ m.getId()+"</td>");
                 out.println("<td>"+ m.getBodega().getNombre()+"</td>");
