@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%@page import="java.util.Iterator"%>
+<%@page import="servlets.VerBodega"%>
+<%@page import="producto.listarProductos"%>
+<%@page import="java.util.List"%>
+<%@page import="data.Producto"%>
+<%@page import="datasessionbeans.Data_ProductoFacadeLocal"%>
+<%@page import="javax.ejb.EJB"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -52,7 +55,7 @@ and open the template in the editor.
                     <span class="icon-bar"></span>
                 </button>
             
-                <a class="navbar-brand" href="index.html">Admin</a>
+                <a class="navbar-brand" href="/">Admin</a>
 
             </div>
            
@@ -78,16 +81,16 @@ and open the template in the editor.
 
                     
                     <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Productos<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Inventario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                      
                                 <li>
                                 
-                                    <a href="plantillaCrear"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                    <a href="plantillaCrear"><i class='fa fa-plus fa-fw'></i>Agregar Productos</a>
                                 </li>
 
                                 <li>
-                                    <a href="VerProductos"><i class='fa fa-list-ol fa-fw'></i> Ver </a>
+                                    <a href="VerProductos"><i class='fa fa-list-ol fa-fw'></i> Ver Productos</a>
                                 </li>
                             </ul>
                         </li>
@@ -97,11 +100,11 @@ and open the template in the editor.
                             <ul class="nav nav-second-level">
                          
                                 <li>
-                                    <a href="plantillaCrearBodega"> <i class='fa fa-plus fa-fw'></i> Agregar </a>
+                                    <a href="/proyecto/create"> <i class='fa fa-plus fa-fw'></i> Agregar </a>
                                 </li>
                                 <li>
                                 
-                                    <a href="VerBodega"><i class='fa fa-list-ol fa-fw'></i>Ver</a>
+                                    <a href="/proyecto"><i class='fa fa-list-ol fa-fw'></i>Ver</a>
                                 </li>
                             </ul>
                         </li>
@@ -112,12 +115,15 @@ and open the template in the editor.
                             <ul class="nav nav-second-level">
                           
                                 <li>
-                                    <a href="crearMov"> <i class='fa fa-plus fa-fw'></i> Agregar </a>
+                                    <a href=""> <i class='fa fa-plus fa-fw'></i> Agregar </a>
                                 </li>
                                 <li>
-                                    <a href="verMov"> <i class='fa fa-plus fa-fw'></i> Ver </a>
+                                    <a href="/alumno/importar"> <i class='fa fa-plus fa-fw'></i> Importar lista </a>
                                 </li>
-                                
+                                <li>
+                     
+                                    <a href="/alumno"><i class='fa fa-list-ol fa-fw'></i> Estudiantes</a>
+                                </li>
                             </ul>
                         </li>
                         
@@ -133,9 +139,36 @@ and open the template in the editor.
 
 
      </nav>
+          <div id="page-wrapper">
 
-
+    
+    <div class="row">
+        <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <fieldset>
+                <legend>Editar Bodega : <%= request.getAttribute("id") %></legend>
+       
+               <form action="UpdateBodega" method="post">
+                   
+            <input type="hidden" name="idP" value="<%= request.getAttribute("id") %>">
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" value="<%= request.getAttribute("nombre") %>">
+            </div>
+                   
+   
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+                <button class="btn btn-danger" type="reset">Cancelar</button>
+            </div>
+               </form>
+            </fieldset>
+        </div>
     </div>
+
+
+        </div>
+    </div>
+    
     
 
 </body>

@@ -48,6 +48,22 @@
         <servlet-name>verMov</servlet-name>
         <servlet-class>servlets.verMov</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerBodega</servlet-name>
+        <servlet-class>servlets.VerBodega</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarBodega</servlet-name>
+        <servlet-class>servlets.EliminarBodega</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarBodega</servlet-name>
+        <servlet-class>servlets.EditarBodega</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateBodega</servlet-name>
+        <servlet-class>servlets.UpdateBodega</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ingresarProductos</servlet-name>
         <url-pattern>/ingresarProductos</url-pattern>
@@ -95,6 +111,22 @@
     <servlet-mapping>
         <servlet-name>verMov</servlet-name>
         <url-pattern>/verMov</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerBodega</servlet-name>
+        <url-pattern>/VerBodega</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarBodega</servlet-name>
+        <url-pattern>/EliminarBodega</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarBodega</servlet-name>
+        <url-pattern>/EditarBodega</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateBodega</servlet-name>
+        <url-pattern>/UpdateBodega</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
