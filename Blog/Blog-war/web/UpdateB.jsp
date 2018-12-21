@@ -100,11 +100,11 @@
                             <ul class="nav nav-second-level">
                          
                                 <li>
-                                    <a href="/proyecto/create"> <i class='fa fa-plus fa-fw'></i> Agregar </a>
+                                    <a href="plantillaCrearBodega"> <i class='fa fa-plus fa-fw'></i> Agregar </a>
                                 </li>
                                 <li>
                                 
-                                    <a href="/proyecto"><i class='fa fa-list-ol fa-fw'></i>Ver</a>
+                                    <a href="VerBodega"><i class='fa fa-list-ol fa-fw'></i>Ver</a>
                                 </li>
                             </ul>
                         </li>

@@ -124,7 +124,7 @@ public class verMov extends HttpServlet {
 "                                </li>\n" +
 "                                <li>\n" +
 "                                \n" +
-"                                    <a href=\"/proyecto\"><i class='fa fa-list-ol fa-fw'></i>Ver</a>\n" +
+"                                    <a href=\"VerBodega\"><i class='fa fa-list-ol fa-fw'></i>Ver</a>\n" +
 "                                </li>\n" +
 "                            </ul>\n" +
 "                        </li>\n" +
